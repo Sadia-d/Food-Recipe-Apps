@@ -13,7 +13,7 @@ import Home from "./Home";
         {
         path:'/',
         element:<Home></Home>,
-        loader : ()=> fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata')
+        loader : ()=> fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=')
       },
       {
         path:'/category',
