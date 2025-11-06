@@ -8,21 +8,22 @@ const Home = () => {
 
     const foodData = useLoaderData()
     const meals = foodData.meals || [];
-    const [foods , setFoods]= useState(meals)
+    const [foods, setFoods] = useState(meals);
 
-    const handleSearchFoods = (e) =>{
-       e.preventDefault();
-       const searchFoods = e.target.search.value;
-      if(searchFoods){
+    const handleSearchFoods = (e) => {
+        e.preventDefault();
+        const searchFoods = e.target.search.value;
+        if (searchFoods) {
             const searchResults = meals.filter(meal => meal.strMeal.toLowerCase().includes(searchFoods.toLowerCase()))
             setFoods(searchResults)
-      }
-      else{
-        setFoods(meals)
-      }
-        
+        }
+        else {
+            setFoods(meals)
+        }
+
+
     }
-  
+
 
     return (
         <div className='mt-10 mb-10'>
@@ -44,7 +45,7 @@ const Home = () => {
                         <div>
                             <form onSubmit={handleSearchFoods} >
                                 <input className='border px-2 py-1 w-80 rounded-l-xl'
-                                type="search" name="search" id="" />
+                                    type="search" name="search" id="" />
                                 <button className='border bg-emerald-600 px-3 py-1 rounded-r-xl' >Search</button>
                             </form>
                         </div>
@@ -54,15 +55,19 @@ const Home = () => {
             </div>
             {/* banner section end */}
 
-           {/* meal-card-section start */}
-           <div className='mt-14 grid grid-cols-3 gap-5 justify-items-center'>
-            {
-            foods.map(meal => <Foods
-                key={meal.idMeal}
-                 meal={meal}></Foods>)
-            }
-           </div>
-           {/* meal-card-section end */}
+            {/* meal-card-section start */}
+
+            <div className='mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 justify-items-center'>
+                {
+                    foods.map(meal => <Foods key={meal.idMeal} meal={meal} />)
+                }
+
+
+            </div>
+
+
+            {/* meal-card-section end */}
+
         </div>
     );
 };

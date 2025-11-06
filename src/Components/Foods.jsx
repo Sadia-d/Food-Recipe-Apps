@@ -18,7 +18,7 @@ const Foods = ({ meal }) => {
 
                     </div>
                     <div className="card-actions ">
-                        <button className="btn btn-primary">Buy Now</button>
+                        <button className="btn bg-green-800 text-white">See deatils</button>
                     </div>
                 </div>
             </div>

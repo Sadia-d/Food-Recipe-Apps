@@ -18,6 +18,7 @@ import Home from "./Home";
       {
         path:'/category',
         element:<Categories></Categories>,
+        loader:() => fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
       },
       {
         path:'/details',

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router';
 
 const Navbar = () => {
 
-    const navlink = <div className='flex justify-center gap-6'>
+    const navlink = <div className='flex md:flex-row flex-col justify-center gap-6'>
         <NavLink className={({isActive})=> isActive ? 'text-green-400':''} to='/' >Home</NavLink>
 
         <NavLink className={({isActive})=> isActive ? 'text-green-400':''} to='/category' >Category</NavLink>
